@@ -1,0 +1,105 @@
+.hybrid {
+    flex-direction: column;
+
+    .hybrid_header {
+        width: 100%;
+
+        h1 {
+            font-size: 32px;
+            font-family: 'Montserrat';
+            color: white;
+            font-weight: 600;
+            text-align: center;
+            @media(max-width: 580px){
+                font-size: 28px;
+            }
+        }
+    }
+
+    .hybrid_content {
+        width: 100%;
+        padding: 15px;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        /* Адаптив для ширини екранів до 880px */
+        @media (max-width: 880px) {
+            padding: 0;
+            flex-direction: column;
+        }
+
+        .hybrid_content_item {
+            width: 100%;
+            margin: 10px 30px;
+            padding: 20px;
+            height: 500px;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            z-index: 6;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+
+            /* Адаптив для ширини екранів до 880px */
+            @media (max-width: 880px) {
+                width: 90%;
+                margin: 10px auto;
+                p {
+                    margin: 0;
+                }
+            }
+
+            /* Адаптив для ширини екранів до 366px */
+            @media (max-width: 366px) {
+                width: 100%;
+                margin: 5px 10px;
+                padding: 10px;
+                height: auto; /* Робимо висоту автоматичною для малого екрану */
+                p {
+                    font-size: 22px; /* Зменшуємо розмір шрифту для тексту */
+                    margin: 10px 5px;
+                    span {
+                        font-size: 26px; /* Зменшуємо розмір шрифту для span */
+                    }
+                }
+            }
+
+            p {
+                margin: 30px 10px;
+                font-size: 28px;
+                color: white;
+                font-family: 'Montserrat';
+                font-weight: 400;
+                @media(max-width: 580px){
+                    font-size: 20px;
+                }
+                span {
+                    color: rgba(128, 128, 128, 0.8);
+                    font-size: 32px;
+                    @media(max-width: 580px){
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+    }
+}
